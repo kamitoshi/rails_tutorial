@@ -53,12 +53,5 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_url
   end
 
-  test "should redirected destroy when logged in as a wrong user" do
-    log_in_as(@user)
-    assert_difference "User.count",-1 do
-      delete user_path(@other_user)
-    end
-    assert_redirected_to users_path
-  end
 
 end
